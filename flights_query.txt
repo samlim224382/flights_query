@@ -1,0 +1,23 @@
+-- Selects all categories from the data file airports --
+SELECT *
+FROM airports;
+
+-- Selects all categories from the data file airports --
+SELECT *
+FROM airports;
+
+--Select faa, name, lat and lon fields from airports -- 
+SELECT faa, name, ROUND(lat, 2) AS latitude, ROUND(lon, 2) AS longitude
+FROM airports;
+
+--change Far to celsius--
+SELECT (temp-32)*(.555) AS temp_celsius
+FROM weather
+
+--Returning how many seats a plane can sit--
+SELECT CONCAT('This plane seats ', seats, '.') AS plane_seats
+FROM planes;
+
+--Proper Noun query--
+SELECT CONCAT('This ', year, ' ', INITCAP(manufacturer), ' ', model ,' seats ', seats, '.')
+FROM planesFROM planes
