@@ -1,0 +1,78 @@
+--built since 2000--
+SELECT *
+FROM planes
+WHERE year >= 2000;
+
+--manufacturer is boeing--
+SELECT * 
+FROM planes
+WHERE manufacturer = 'BOEING';
+
+--built between 1980 and 1990--
+SELECT *
+FROM planes
+WHERE year BETWEEN 1980 AND 1990;
+
+--specific manufacturers--
+SELECT * 
+FROM planes
+WHERE manufacturer IN('CESSNA', 'BOEING', 'AIRBUS');
+
+--year is unknown--
+SELECT *
+FROM planes
+WHERE year IS NULL;
+
+--speed is not unknown--
+SELECT *
+FROM planes
+WHERE speed IS NOT NULL;
+
+--do not seat between 50-200--
+SELECT *
+FROM planes 
+WHERE seats NOT BETWEEN 50 AND 200;
+
+--field starts with--
+SELECT *
+FROM planes
+WHERE engine LIKE 'Turbo%';
+
+--in format XXX-XXX--
+SELECT *
+FROM planes
+WHERE model LIKE '___-___';
+
+--Built before 1980 and seats more than 100--
+SELECT *
+FROM planes
+WHERE year < 1980 AND seats > 100;
+
+--built after 2000 and Reciprocating engine--
+SELECT *
+FROM planes
+WHERE year > 2000 AND engine = 'Reciprocating';
+
+--look at WHERE SQL CHECKPOINT QUESTION 12--
+SELECT *
+FROM planes
+WHERE year BETWEEN 1980 AND 1990
+	AND engines != 2
+	AND speed IS NOT NULL
+AND manufacturer = 'BOEING' OR manufacturer = 'CESSNA';
+
+--SQL WHERE CHECKPOINT QUESTION 13--
+SELECT *
+FROM planes
+WHERE year BETWEEN 1980 AND 1990
+	AND engines != 2
+	AND speed IS NOT NULL
+OR manufacturer = 'BOEING' OR manufacturer = 'CESSNA';
+
+--SQL WHERE CP QUESTION 14--
+SELECT *
+FROM planes
+WHERE year BETWEEN 1980 AND 1990
+	AND engines != 2
+	AND (speed IS NOT NULL
+OR manufacturer = 'BOEING' OR manufacturer = 'CESSNA');
